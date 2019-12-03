@@ -15,9 +15,10 @@ public class GameButton : MonoBehaviour
     private Button button;
     [SerializeField]
     private TextMeshProUGUI buttonText;
+    [SerializeField]
+    private GameButtonData gameButtonData;
 
     private static Color darkColor = new Color(0.2f, 0.2f, 0.2f);
-    private GameButtonData gameButtonData;
 
     private void OnEnable()
     {
