@@ -9,27 +9,29 @@ using TMPro;
 [ExecuteInEditMode]
 public class GameButton : MonoBehaviour
 {
-    [SerializeField]
-    private GameButtonData gameButtonData = null;
+    public GameButtonData GameButtonData { get => gameButtonData; set => SetupButton(value); }
+
     [SerializeField]
     private Button button;
     [SerializeField]
     private TextMeshProUGUI buttonText;
 
     private static Color darkColor = new Color(0.2f, 0.2f, 0.2f);
+    private GameButtonData gameButtonData;
 
     private void OnEnable()
     {
-        if (gameButtonData != null)
-           SetupButton();
+        if (GameButtonData != null)
+           SetupButton(GameButtonData);
     }
 
-    private void SetupButton()
+    private void SetupButton(GameButtonData gameButtonData)
     {
-        if (gameButtonData.GamePreviewImage != null)
-            button.image = gameButtonData.GamePreviewImage;
-        buttonText.text = gameButtonData.GameName;
-        button.onClick.AddListener(() => SceneManager.LoadScene(gameButtonData.SceneName));
+        this.gameButtonData = gameButtonData;
+        if (GameButtonData.GamePreviewImage != null)
+            button.image = GameButtonData.GamePreviewImage;
+        buttonText.text = GameButtonData.GameName;
+        button.onClick.AddListener(() => SceneManager.LoadScene(GameButtonData.SceneName));
         HideDetails();
     }
 
