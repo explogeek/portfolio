@@ -12,13 +12,13 @@ public class GameButton : MonoBehaviour
     public GameButtonData GameButtonData { get => gameButtonData; set => SetupButton(value); }
 
     [SerializeField]
-    private Button button;
+    private Button button = null;
     [SerializeField]
-    private TextMeshProUGUI buttonText;
+    private TextMeshProUGUI buttonText = null;
     [SerializeField]
-    private GameButtonData gameButtonData;
+    private GameButtonData gameButtonData = null;
     [SerializeField]
-    private Image workInProgressImage;
+    private Image workInProgressImage = null;
 
     private static Color darkColor = new Color(0.2f, 0.2f, 0.2f);
 

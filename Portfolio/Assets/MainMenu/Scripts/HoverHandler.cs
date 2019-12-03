@@ -5,9 +5,9 @@ using UnityEngine.EventSystems;
 public class HoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField]
-    private UnityEvent PointerEnterAction;
+    private UnityEvent PointerEnterAction = null;
     [SerializeField]
-    private UnityEvent PointerExitAction;
+    private UnityEvent PointerExitAction = null;
 
     public void OnPointerEnter(PointerEventData eventData)
     {

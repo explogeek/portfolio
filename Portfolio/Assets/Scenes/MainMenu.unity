@@ -130,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 74748788}
   - component: {fileID: 74748787}
+  - component: {fileID: 74748789}
   m_Layer: 0
   m_Name: MenuManager
   m_TagString: Untagged
@@ -163,6 +164,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &74748789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74748786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4ab4d031c6c66c4285a47987c9e53ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameButtonDataArray:
+  - {fileID: 11400000, guid: 0d535dfdf708a404b969fae57b056984, type: 2}
+  - {fileID: 11400000, guid: 8e9797b5845e70c46b396d92423eb201, type: 2}
+  - {fileID: 11400000, guid: 55610dfbead705248acabd46552833f0, type: 2}
+  - {fileID: 11400000, guid: 545224c586f05574ab9b037d677c2004, type: 2}
+  - {fileID: 11400000, guid: 2e0f510d60a2a8d49ac391f0aab64d5c, type: 2}
+  - {fileID: 11400000, guid: 6a2ac92ec03c05d43a6d419c63ec6000, type: 2}
+  - {fileID: 11400000, guid: b3db4dc590444264f923d7cef45ad7fc, type: 2}
+  - {fileID: 11400000, guid: 4f167c7fe36d77a4db73dac60ee38a31, type: 2}
+  - {fileID: 11400000, guid: 3554bc138ad8f0f4c850597b10a6aee9, type: 2}
+  gameButtonPrefab: {fileID: 4368856431326020044, guid: 1210948ee0a22bf4d827ecceb91a31e5,
+    type: 3}
+  gameGrid: {fileID: 2136909242}
 --- !u!1 &215482305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,7 +1928,6 @@ GameObject:
   - component: {fileID: 2136909242}
   - component: {fileID: 2136909244}
   - component: {fileID: 2136909243}
-  - component: {fileID: 2136909245}
   m_Layer: 5
   m_Name: Game Grid
   m_TagString: Untagged
@@ -1967,30 +1992,6 @@ MonoBehaviour:
   m_Spacing: {x: 30, y: 20}
   m_Constraint: 1
   m_ConstraintCount: 3
---- !u!114 &2136909245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2136909241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4ab4d031c6c66c4285a47987c9e53ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameButtonDataArray:
-  - {fileID: 11400000, guid: 0d535dfdf708a404b969fae57b056984, type: 2}
-  - {fileID: 11400000, guid: 8e9797b5845e70c46b396d92423eb201, type: 2}
-  - {fileID: 11400000, guid: 55610dfbead705248acabd46552833f0, type: 2}
-  - {fileID: 11400000, guid: 545224c586f05574ab9b037d677c2004, type: 2}
-  - {fileID: 11400000, guid: 2e0f510d60a2a8d49ac391f0aab64d5c, type: 2}
-  - {fileID: 11400000, guid: 6a2ac92ec03c05d43a6d419c63ec6000, type: 2}
-  - {fileID: 11400000, guid: b3db4dc590444264f923d7cef45ad7fc, type: 2}
-  - {fileID: 11400000, guid: 4f167c7fe36d77a4db73dac60ee38a31, type: 2}
-  - {fileID: 11400000, guid: 3554bc138ad8f0f4c850597b10a6aee9, type: 2}
-  gameButtonPrefab: {fileID: 4368856431326020044, guid: 1210948ee0a22bf4d827ecceb91a31e5,
-    type: 3}
 --- !u!1001 &695246915390714924
 PrefabInstance:
   m_ObjectHideFlags: 0
