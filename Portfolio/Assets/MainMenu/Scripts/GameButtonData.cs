@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "Game Button Data", menuName = "Main Menu/Game Button Data")]
