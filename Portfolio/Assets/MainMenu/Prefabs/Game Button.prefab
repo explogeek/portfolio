@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 989564336846767181}
   - component: {fileID: 8597199129988425771}
   - component: {fileID: 1700435684972750038}
+  - component: {fileID: 8901471594829239525}
   m_Layer: 5
   m_Name: Game Button
   m_TagString: Untagged
@@ -132,6 +133,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameButtonData: {fileID: 0}
+--- !u!114 &8901471594829239525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4368856431326020044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1700435684972750038}
+          m_MethodName: ShowDetails
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1700435684972750038}
+          m_MethodName: HideDetails
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &6788831112394257802
 GameObject:
   m_ObjectHideFlags: 0
