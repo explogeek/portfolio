@@ -133,6 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameButtonData: {fileID: 0}
+  button: {fileID: 8597199129988425771}
+  buttonText: {fileID: 4407146092421682326}
 --- !u!114 &8901471594829239525
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,17 +11,12 @@ public class GameButton : MonoBehaviour
 {
     [SerializeField]
     private GameButtonData gameButtonData = null;
-
+    [SerializeField]
     private Button button;
+    [SerializeField]
     private TextMeshProUGUI buttonText;
 
     private static Color darkColor = new Color(0.2f, 0.2f, 0.2f);
-
-    private void Awake()
-    {
-        button = GetComponent<Button>();
-        buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
-    }
 
     private void OnEnable()
     {
