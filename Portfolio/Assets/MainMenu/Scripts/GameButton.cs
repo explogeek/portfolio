@@ -17,6 +17,8 @@ public class GameButton : MonoBehaviour
     private TextMeshProUGUI buttonText;
     [SerializeField]
     private GameButtonData gameButtonData;
+    [SerializeField]
+    private Image workInProgressImage;
 
     private static Color darkColor = new Color(0.2f, 0.2f, 0.2f);
 
@@ -34,17 +36,23 @@ public class GameButton : MonoBehaviour
         buttonText.text = GameButtonData.GameName;
         button.onClick.AddListener(() => SceneManager.LoadScene(GameButtonData.SceneName));
         HideDetails();
+        button.interactable = gameButtonData.isPlayable;
+        workInProgressImage.enabled = !button.interactable;
     }
 
     public void ShowDetails()
     {
         button.image.color = darkColor;
         buttonText.gameObject.SetActive(true);
+        if (workInProgressImage.enabled)
+            workInProgressImage.color = darkColor;
     }
 
     public void HideDetails()
     {
         button.image.color = Color.white;
         buttonText.gameObject.SetActive(false);
+        if (workInProgressImage.enabled)
+            workInProgressImage.color = Color.white;
     }
 }
