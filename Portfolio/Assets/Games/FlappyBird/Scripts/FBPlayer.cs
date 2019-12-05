@@ -26,11 +26,16 @@ public class FBPlayer : MonoBehaviour
             OnHit();
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        OnHit();
+    }
+
     private void Update()
     {
         if (Input.GetButtonDown("Jump"))
         {
-            rb.velocity = rb.velocity / 10;
+            rb.velocity = rb.velocity / 5;
             rb.AddForce(new Vector2(0f, jumpForce));
         }
     }
