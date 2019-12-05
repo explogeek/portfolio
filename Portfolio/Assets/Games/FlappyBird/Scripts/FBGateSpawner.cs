@@ -15,9 +15,9 @@ public class FBGateSpawner : MonoBehaviour
 
     void Update()
     {
-        if (Time.unscaledTime - lastSpawnTime > spawnRate)
+        if (Time.time - lastSpawnTime > spawnRate)
         {
-            lastSpawnTime = Time.unscaledTime;
+            lastSpawnTime = Time.time;
             Transform spawnerTransform = this.gameObject.transform;
             float yShift = verticalShiftRange / 45;
             float spawnPositionY = spawnerTransform.position.y + Random.Range(-yShift, yShift);
