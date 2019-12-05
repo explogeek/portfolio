@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class FBGateDestroyer : MonoBehaviour
+public class FBMoverDestroyer : MonoBehaviour
 {
     private void OnTriggerExit2D(Collider2D collision)
     {
