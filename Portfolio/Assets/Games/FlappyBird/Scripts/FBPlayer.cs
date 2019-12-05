@@ -12,6 +12,7 @@ public class FBPlayer : MonoBehaviour
     private int jumpForce = 250;
 
     private Rigidbody2D rb;
+    private bool didHitObstacle = false;
 
     private void Awake()
     {
@@ -23,12 +24,22 @@ public class FBPlayer : MonoBehaviour
         if (collision.gameObject.GetComponent<FBMover>() != null)
             OnGatePass();
         else
-            OnHit();
+            HitObstacle();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        OnHit();
+        HitObstacle();
+    }
+
+    private void HitObstacle()
+    {
+        if (!didHitObstacle)
+        {
+            didHitObstacle = true;
+            rb.velocity = Vector2.zero;
+            OnHit();
+        }
     }
 
     private void Update()

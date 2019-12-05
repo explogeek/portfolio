@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class FBGameManager : MonoBehaviour
 {
+    public UnityEvent gameOverEvent;
+
     private void Awake()
     {
         FBPlayer.OnHit += GameOver;
@@ -22,6 +22,7 @@ public class FBGameManager : MonoBehaviour
     {
         Debug.Log("Game over!");
         FBMover.Stop();
+        gameOverEvent.Invoke();
     }
 
     private void IncreaseScore()
