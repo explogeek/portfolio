@@ -308,6 +308,7 @@ MonoBehaviour:
   gatePrefab: {fileID: 380956844444850087, guid: 6b142d89ebd116541bb0753bda7c1967,
     type: 3}
   verticalShiftRange: 70
+  groundWidth: 0.9
 --- !u!4 &743482365
 Transform:
   m_ObjectHideFlags: 0
