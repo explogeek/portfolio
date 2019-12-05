@@ -42,12 +42,9 @@ public class FBPlayer : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void Jump()
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            rb.velocity = rb.velocity / 5;
-            rb.AddForce(new Vector2(0f, jumpForce));
-        }
+        rb.velocity = rb.velocity / 5;
+        rb.AddForce(new Vector2(0f, jumpForce));
     }
 }
