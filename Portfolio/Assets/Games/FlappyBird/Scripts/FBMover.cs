@@ -7,7 +7,7 @@ public class FBMover : MonoBehaviour
     [SerializeField]
     private float speed = 1f;
 
-    private static bool shouldMove = true;
+    private static bool shouldMove = false;
 
     private void Awake()
     {
@@ -23,5 +23,10 @@ public class FBMover : MonoBehaviour
     public static void Stop()
     {
         shouldMove = false;
+    }
+
+    public static void Start()
+    {
+        shouldMove = true;
     }
 }

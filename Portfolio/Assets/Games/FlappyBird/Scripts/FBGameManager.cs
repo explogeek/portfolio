@@ -4,29 +4,23 @@ using UnityEngine.Events;
 public class FBGameManager : MonoBehaviour
 {
     public UnityEvent gameOverEvent;
+    public UnityEvent gameStartEvent;
 
     private void Awake()
     {
         FBPlayer.OnHit += GameOver;
-        FBPlayer.OnGatePass += IncreaseScore;
+        gameStartEvent.AddListener(() => FBMover.Start());
+        gameStartEvent.Invoke();
     }
-
 
     private void OnDestroy()
     {
         FBPlayer.OnHit -= GameOver;
-        FBPlayer.OnGatePass -= IncreaseScore;
     }
 
     private void GameOver()
     {
-        Debug.Log("Game over!");
         FBMover.Stop();
         gameOverEvent.Invoke();
-    }
-
-    private void IncreaseScore()
-    {
-        Debug.Log("Increase score");
     }
 }

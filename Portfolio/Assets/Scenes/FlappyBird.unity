@@ -616,6 +616,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1120841512}
   - component: {fileID: 1120841513}
+  - component: {fileID: 1120841514}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -696,6 +697,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1120841514}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  gameStartEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1120841514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120841511}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f4a644d0f5d1448b0432a80b581731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1185190401
 GameObject:
   m_ObjectHideFlags: 0
