@@ -25,7 +25,7 @@ public class FBGateSpawner : MonoBehaviour
             float spawnPositionY = spawnerTransform.position.y + Random.Range(-yShift + groundWidth, yShift);
             Vector2 spawnPosition = new Vector2(spawnerTransform.position.x, spawnPositionY);
             // TODO: Pooling
-            Instantiate(gatePrefab, spawnPosition, spawnerTransform.rotation);
+            Instantiate(gatePrefab, spawnPosition, spawnerTransform.rotation, this.gameObject.transform);
         }
     }
 }
