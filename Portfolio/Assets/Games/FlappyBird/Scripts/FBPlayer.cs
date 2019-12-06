@@ -3,13 +3,14 @@ using UnityEngine;
 
 public class FBPlayer : MonoBehaviour
 {
-
     public static event Action OnHit = delegate { };
     public static event Action OnGatePass = delegate { };
 
     [SerializeField]
     [Range(100, 800)]
     private int jumpForce = 250;
+    [SerializeField]
+    private string gateTag = "Gate";
 
     private Rigidbody2D rb;
     private bool didHitObstacle = false;
@@ -21,10 +22,10 @@ public class FBPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<FBMover>() != null)
-            OnGatePass();
-        else
+        if (collision.GetComponent<FBObstacle>() != null)
             HitObstacle();
+        else if (collision.tag == gateTag)
+            OnGatePass();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
