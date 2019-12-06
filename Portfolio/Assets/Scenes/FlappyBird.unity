@@ -740,6 +740,7 @@ GameObject:
   - component: {fileID: 1185190405}
   - component: {fileID: 1185190409}
   - component: {fileID: 1185190410}
+  - component: {fileID: 1185190411}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -921,6 +922,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1185190411}
+        m_MethodName: Jump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1185190410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -934,6 +946,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHeight: 5.6
+--- !u!114 &1185190411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185190401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e0c0a2124f87b745bf601ed320af8d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSound: {fileID: 8300000, guid: c90fe0703d2221745bd0b5727e003082, type: 3}
+  jumpSound: {fileID: 8300000, guid: aa40e47bd5fe1c74bb9da391c531a19f, type: 3}
+  scoreSound: {fileID: 8300000, guid: f956dc66ee893eb449bec640dd2fdf00, type: 3}
 --- !u!1 &1240195449
 GameObject:
   m_ObjectHideFlags: 0

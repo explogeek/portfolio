@@ -13,11 +13,21 @@ public class FBPlayer : MonoBehaviour
     private string gateTag = "Gate";
 
     private Rigidbody2D rb;
+    private FBPlayerSoundManager soundManager;
     private bool didHitObstacle = false;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        soundManager = GetComponent<FBPlayerSoundManager>();
+        OnHit += soundManager.Hit;
+        OnGatePass += soundManager.Score;
+    }
+
+    private void OnDestroy()
+    {
+        OnHit -= soundManager.Hit;
+        OnGatePass -= soundManager.Score;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
