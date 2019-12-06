@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneName: FlappyBird
   GameName: Flappy Bird
-  GamePreviewImage: {fileID: 0}
+  GamePreviewImage: {fileID: 21300000, guid: b30d524bc6f701c49961617cf8abc049, type: 3}
   isPlayable: 1

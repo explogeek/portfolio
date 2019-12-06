@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 8597199129988425771}
+  image: {fileID: 989564336846767181}
   buttonText: {fileID: 4407146092421682326}
   gameButtonData: {fileID: 0}
   workInProgressImage: {fileID: 8158354406306485579}

@@ -12,6 +12,8 @@ public class GameButton : MonoBehaviour
     [SerializeField]
     private Button button = null;
     [SerializeField]
+    private Image image = null;
+    [SerializeField]
     private TextMeshProUGUI buttonText = null;
     [SerializeField]
     private GameButtonData gameButtonData = null;
@@ -30,7 +32,7 @@ public class GameButton : MonoBehaviour
     {
         this.gameButtonData = gameButtonData;
         if (GameButtonData.GamePreviewImage != null)
-            button.image = GameButtonData.GamePreviewImage;
+            image.sprite = GameButtonData.GamePreviewImage;
         buttonText.text = GameButtonData.GameName;
         button.onClick.AddListener(() => SceneManager.LoadScene(GameButtonData.SceneName));
         HideDetails();
