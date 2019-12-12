@@ -5,9 +5,8 @@ using Newtonsoft.Json;
 public class HighscoreManager : MonoBehaviour
 {
     public static HighscoreManager instance;
+    public Dictionary<string, int> GamesHighscores { get; private set; }
 
-    private Dictionary<string, int> gamesHighscores;
-    public Dictionary<string, int> GamesHighscores { get; }
     private const string playerPrefsKey = "Highscores";
 
     private void Awake()
@@ -30,7 +29,7 @@ public class HighscoreManager : MonoBehaviour
         }
         try
         {
-            gamesHighscores = JsonConvert.DeserializeObject<Dictionary<string, int>>(highscoresString);
+            GamesHighscores = JsonConvert.DeserializeObject<Dictionary<string, int>>(highscoresString);
         }
         catch (JsonSerializationException e)
         {
@@ -41,19 +40,19 @@ public class HighscoreManager : MonoBehaviour
 
     private void InitHighscores()
     {
-        gamesHighscores = new Dictionary<string, int>();
+        GamesHighscores = new Dictionary<string, int>();
     }
 
     public void AddHighscore(string gameName, int highscore)
     {
-        gamesHighscores[gameName] = highscore;
+        GamesHighscores[gameName] = highscore;
     }
 
     public void SaveHighscores()
     {
         try
         {
-            string highscoresString = JsonConvert.SerializeObject(gamesHighscores);
+            string highscoresString = JsonConvert.SerializeObject(GamesHighscores);
             PlayerPrefs.SetString(playerPrefsKey, highscoresString);
         }
         catch (JsonSerializationException e)
@@ -64,8 +63,8 @@ public class HighscoreManager : MonoBehaviour
 
     public int GetHighscore(string gameName)
     {
-        if (gamesHighscores.ContainsKey(gameName))
-            return gamesHighscores[gameName];
+        if (GamesHighscores.ContainsKey(gameName))
+            return GamesHighscores[gameName];
         return 0;
     }
 
