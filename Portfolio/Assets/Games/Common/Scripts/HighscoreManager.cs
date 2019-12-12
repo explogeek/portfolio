@@ -30,8 +30,10 @@ public class HighscoreManager : MonoBehaviour
         try
         {
             GamesHighscores = JsonConvert.DeserializeObject<Dictionary<string, int>>(highscoresString);
+            if (GamesHighscores == null)
+                InitHighscores();
         }
-        catch (JsonSerializationException e)
+        catch (JsonException e)
         {
             Debug.Log("Could not deserialize highscores: " + e.Message);
             InitHighscores();
@@ -55,7 +57,7 @@ public class HighscoreManager : MonoBehaviour
             string highscoresString = JsonConvert.SerializeObject(GamesHighscores);
             PlayerPrefs.SetString(playerPrefsKey, highscoresString);
         }
-        catch (JsonSerializationException e)
+        catch (JsonException e)
         {
             Debug.Log("Could not serialize highscores: " + e.Message);
         }
