@@ -20,7 +20,7 @@ public class GameButton : MonoBehaviour
     [SerializeField]
     private Image workInProgressImage = null;
 
-    private static Color darkColor = new Color(0.2f, 0.2f, 0.2f);
+    private static Color darkColor = new Color(0.4f, 0.4f, 0.4f);
 
     private void OnEnable()
     {
