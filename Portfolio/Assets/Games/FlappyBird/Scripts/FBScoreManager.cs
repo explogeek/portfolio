@@ -1,25 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class FBScoreManager : MonoBehaviour
+public class FBScoreManager : ScoreManager
 {
-    [SerializeField]
-    private IntVariable currentScore = null;
-
-    private void Awake()
+    protected override void Awake()
     {
-        currentScore.value = 0;
+        gameName = "Flappy Bird";
         FBPlayer.OnGatePass += IncreaseScore;
+        base.Awake();
     }
 
     private void OnDestroy()
     {
         FBPlayer.OnGatePass -= IncreaseScore;
-    }
-
-    private void IncreaseScore()
-    {
-        currentScore.value += 1;
     }
 }
