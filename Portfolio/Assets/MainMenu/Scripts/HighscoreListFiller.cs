@@ -10,10 +10,23 @@ public class HighscoreListFiller : MonoBehaviour
 
     private void Start()
     {
+        Populate();
+    }
+
+    public void Populate()
+    {
         foreach (KeyValuePair<string, int> record in HighscoreManager.instance.GamesHighscores)
         {
             var highscoreRecordObj = Instantiate(highscoreRecordPrefab, highscoreList);
             highscoreRecordObj.GetComponent<HighscoreRecordUpdater>().SetData(record.Key, record.Value);
+        }
+    }
+
+    public void Clear()
+    {
+        foreach (Transform child in highscoreList)
+        {
+            Destroy(child.gameObject);
         }
     }
 }

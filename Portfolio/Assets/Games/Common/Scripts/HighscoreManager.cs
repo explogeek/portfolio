@@ -19,7 +19,11 @@ public class HighscoreManager : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(this);
+        Load();
+    }
 
+    public void Load()
+    {
         string highscoresString = PlayerPrefs.GetString("Highscores", "");
         Debug.Log("Loaded highscores: " + highscoresString);
         if (highscoresString == "")
@@ -38,6 +42,12 @@ public class HighscoreManager : MonoBehaviour
             Debug.Log("Could not deserialize highscores: " + e.Message);
             InitHighscores();
         }
+    }
+
+    public void Reset()
+    {
+        PlayerPrefs.SetString(playerPrefsKey, "");
+        Load();
     }
 
     private void InitHighscores()
