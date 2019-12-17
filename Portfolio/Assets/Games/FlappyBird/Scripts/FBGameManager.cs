@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class FBGameManager : MonoBehaviour
 {
@@ -22,5 +23,12 @@ public class FBGameManager : MonoBehaviour
     {
         FBMover.Stop();
         gameOverEvent.Invoke();
+    }
+
+    public void Quit()
+    {
+        FindObjectOfType<FBScoreManager>().UpdateHighscore();
+        HighscoreManager.instance.SaveHighscores();
+        SceneManager.LoadScene(0);
     }
 }
