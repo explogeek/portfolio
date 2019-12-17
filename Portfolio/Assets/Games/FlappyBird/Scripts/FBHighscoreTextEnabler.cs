@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 
-public class HighscoreTextEnabler : MonoBehaviour
+public class FBHighscoreTextEnabler : MonoBehaviour
 {
     [SerializeField]
     private GameObject text = null;
