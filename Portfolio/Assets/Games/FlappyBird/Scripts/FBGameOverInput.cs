@@ -5,9 +5,9 @@ public class FBGameOverInput : MonoBehaviour
 {
     private void Update()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && !Input.GetMouseButtonDown(0))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            FindObjectOfType<FBGameManager>().Reload();
         }
     }
 }

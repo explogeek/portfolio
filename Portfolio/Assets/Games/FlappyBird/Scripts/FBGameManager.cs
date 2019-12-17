@@ -31,4 +31,9 @@ public class FBGameManager : MonoBehaviour
         HighscoreManager.instance.SaveHighscores();
         SceneManager.LoadScene(0);
     }
+
+    public void Reload()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }

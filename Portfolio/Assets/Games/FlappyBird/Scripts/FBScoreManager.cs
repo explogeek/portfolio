@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-public class FBScoreManager : ScoreManager
+﻿public class FBScoreManager : ScoreManager
 {
     protected override void Awake()
     {

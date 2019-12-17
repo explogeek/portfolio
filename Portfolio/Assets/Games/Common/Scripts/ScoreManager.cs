@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public abstract class ScoreManager : MonoBehaviour
 {
     [SerializeField]
     protected IntVariable currentScore = null;
+
+    public static Action newHighscore = delegate { };
 
     protected int highscore;
     protected string gameName;
@@ -25,6 +28,7 @@ public abstract class ScoreManager : MonoBehaviour
         {
             highscore = currentScore.value;
             HighscoreManager.instance.AddHighscore(gameName, highscore);
+            newHighscore();
         }
     }
 }
