@@ -11,7 +11,7 @@ public abstract class ScoreManager : MonoBehaviour
     protected int highscore;
     protected string gameName;
 
-    protected virtual void Awake()
+    protected virtual void Start()
     {
         highscore = HighscoreManager.instance.GetHighscore(gameName);
         currentScore.value = 0;

@@ -1,10 +1,10 @@
 ﻿public class FBScoreManager : ScoreManager
 {
-    protected override void Awake()
+    protected override void Start()
     {
         gameName = "Flappy Bird";
         FBPlayer.OnGatePass += IncreaseScore;
-        base.Awake();
+        base.Start();
     }
 
     private void OnDestroy()

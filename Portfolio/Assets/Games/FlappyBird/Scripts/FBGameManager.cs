@@ -11,6 +11,7 @@ public class FBGameManager : MonoBehaviour
     {
         FBPlayer.OnHit += GameOver;
         gameStartEvent.AddListener(() => FBMover.Start());
+        gameStartEvent.AddListener(() => TextureOffsetMover.Start());
         gameStartEvent.Invoke();
     }
 
