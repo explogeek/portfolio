@@ -7,19 +7,21 @@ public abstract class ScoreManager : MonoBehaviour
     protected IntVariable currentScore = null;
 
     public static Action newHighscore = delegate { };
+    public static Action scoreIncreased = delegate { };
+    public static string GameName { get; protected set; }
 
     protected int highscore;
-    protected string gameName;
 
     protected virtual void Start()
     {
-        highscore = HighscoreManager.instance.GetHighscore(gameName);
+        highscore = HighscoreManager.instance.GetHighscore(GameName);
         currentScore.value = 0;
     }
 
     protected virtual void IncreaseScore()
     {
         currentScore.value += 1;
+        scoreIncreased();
     }
 
     public virtual void UpdateHighscore()
@@ -27,7 +29,7 @@ public abstract class ScoreManager : MonoBehaviour
         if (currentScore.value > highscore)
         {
             highscore = currentScore.value;
-            HighscoreManager.instance.AddHighscore(gameName, highscore);
+            HighscoreManager.instance.AddHighscore(GameName, highscore);
             newHighscore();
         }
     }
